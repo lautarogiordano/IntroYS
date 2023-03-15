@@ -1,0 +1,35 @@
+
+--------
+n =  100 
+--------
+28.7 µs ± 584 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+748 µs ± 17 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+712 µs ± 25.5 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+
+--------
+n =  1000 
+--------
+7.24 ms ± 248 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+10.1 ms ± 697 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+10.5 ms ± 1.96 ms per loop (mean ± std. dev. of 7 runs, 100 loops each)
+
+--------
+n =  5000 
+--------
+140 ms ± 8.67 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+55.4 ms ± 2.14 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+67.7 ms ± 2.35 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+
+--------
+n =  10000 
+--------
+969 ms ± 32.3 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+148 ms ± 14.2 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+219 ms ± 31.7 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+
+--------
+n =  15000 
+--------
+3.96 s ± 641 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+302 ms ± 39.2 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+407 ms ± 32.2 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
