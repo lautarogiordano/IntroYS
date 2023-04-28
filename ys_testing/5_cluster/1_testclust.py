@@ -1,14 +1,11 @@
 # %%
 import os
 
-import ffmpeg
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
 import time
-
-plt.rcParams["text.usetex"] = True
-
+from matplotlib import pyplot as plt
 
 # %%
 class model:
@@ -182,24 +179,6 @@ class YSmodel(model):
         )
         return np.random.choice([i, j], p=[p, 1 - p])
 
-
-# # %%
-# def delete_images(figpath):
-#     temppath = os.path.join(figpath, "temp")
-#     for file in os.listdir(temppath):
-#         print(file)
-#         if file.endswith(".png"):
-#             os.remove(os.path.join(temppath, file))
-
-
-# # %% [markdown]
-# # ### Parámetros comunes del sistema y la red
-
-# # %%
-# moviepath = os.path.join(os.getcwd(), "movies")
-# figpath = os.path.join(os.getcwd(), "figs")
-# datapath = os.path.join(os.getcwd(), "data")
-
 # Numero de nodos = Numero de agentes
 n = 1000
 # Pesos de los nodos = riquezas iniciales de los agentes
@@ -223,79 +202,8 @@ for f in f_set:
     start = time.time()
     model.MCS(MCS)
     end = time.time()
-    elapsed_time = end - start
-    print("elapsed time:", elapsed_time, "s.")
-
-#     # Make movie
-#     (
-#         ffmpeg.input(
-#             os.path.join(figpath, "temp", "test_*.png"),
-#             pattern_type="glob",
-#             framerate=30,
-#         )
-#         .output(os.path.join(moviepath, "f={:.2f}_testing.mp4".format(f)))
-#         .overwrite_output()
-#         .run(quiet=True)
-#     )
-
-#     # np.save(os.path.join(datapath, 'w_f={:.2f}_add_fix').format(f), model.n[:, 0])
-
-#    del model
-
-#    delete_images(figpath)
-
-# # %% [markdown]
-# # ## Red multiplicativa
-
-# # %%
-# theta_mul = 250 / (2 * n**2)
-
-# # Red multiplicativa
-# GTG_mul = nx.geographical_threshold_graph(
-#     n, theta=theta_mul, weight=w_0, dim=2, pos=posi, additive=False
-# )
-
-# print("Conectividad: {:.2f}".format(np.mean(list(dict(nx.degree(GTG_mul)).values()))))
-
-# # %% [markdown]
-# # #### Red multiplicativa fija
-
-# # %%
-# for f in f_set:
-#     model = YSmodel(
-#         n,
-#         w_min=1e-17,
-#         w_0=None,
-#         G=None,
-#         additive=False,
-#         theta=None,
-#         save_every=np.inf,
-#         upd_w_every=upd_w,
-#         upd_graph_every=np.inf,
-#         plot_every=plot_every,
-#         figpath=figpath,
-#         f=f,
-#     )
-#     model.MCS(MCS)
-
-#     # Make movie
-#     (
-#         ffmpeg.input(
-#             os.path.join(figpath, "temp", "test_*.png"),
-#             pattern_type="glob",
-#             framerate=30,
-#         )
-#         .output(os.path.join(moviepath, "f={:.2f}_testing.mp4".format(f)))
-#         .overwrite_output()
-#         .run(quiet=True)
-#     )
-
-#     # np.save(os.path.join(datapath, 'w_f={:.2f}_mul_fix').format(f), model.n[:, 0])
-
-#     del model
-
-#     delete_images(figpath)
-
+    net_time = end - start
+    print("Elapsed time: {:.2f} s.".format(net_time))
 
 
 # %%
